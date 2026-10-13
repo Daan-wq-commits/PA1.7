@@ -1,11 +1,15 @@
 def compute_ratio(a, b):
+    if b == 0:
+        return None
     return a / b  # Potential ZeroDivisionError when b == 0
 
 def main():
-    values = [1, 2, 3, 4]
+    values = [1, 2, 3, 0, 4]
     total = 0
     for v in values:
-        total += compute_ratio(10, v)
+        ratio = compute_ratio(10, v)
+        if ratio is not None:
+            total += ratio
     print("Total:", total)
 
 if __name__ == "__main__":
